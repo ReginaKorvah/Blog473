@@ -30,7 +30,7 @@
 		margin: auto;
 		width: 50%;
 		padding-top: 40px;
-		display: ;
+		display: "";
 	}
 
 	#new-blog-form [type=text] {
@@ -51,6 +51,7 @@
 	}
 
 	.blog-post{
+		padding-bottom: 20px;;
 
 	}
 
