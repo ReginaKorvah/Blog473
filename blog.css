@@ -12,6 +12,8 @@
 
 	#open-form {
 		text-align: center;
+		width: 50%;
+		margin: auto;
 	}
 
 	.button {
@@ -24,10 +26,11 @@
 		margin-top: 20px;
 	}
 
-	#new-blog-form {
+	#new-blog-form{
 		margin: auto;
 		width: 50%;
-		display: block;
+		padding-top: 40px;
+		display: ;
 	}
 
 	#new-blog-form [type=text] {

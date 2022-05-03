@@ -2,7 +2,7 @@
 
 <head>
 	<link href="blog.css" rel="stylesheet" type="text/css">
-	<script src="blog.js"></script>
+	<script src="blog.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -10,22 +10,24 @@
 	<div id="display">
 		<!--When you clik this buttom then the new blog form is revealed-->
 		<div id="open-form">
-			<button id="open" value="Click to Start a Blog!" class="button">Post Your Review Here!</button>
+			<button id="open-form-button" class="button">Post Your Review Here!</button>
 		</div>
 		<div id="new-blog-form">
+			<form id="blog-form"></form>
 			<label id="name-label" class="input" for="Name">Name<br>
-				<input type="text" name="Name" placeholder="Your name" id="name">
+				<input type="text" name="Name" placeholder="Your name" id="name" class="input-val" form="blog-form" value="" required>
 			</label><br>
 			<label id="topic-laabel" class="input" for="Topic">Topic<br>
-				<input type="text" name="Topic" placeholder="Title of blog post" id="topic">
+				<input type="text" name="Topic" placeholder="Title of blog post" id="topic"class="input-val" form="blog-form" value="" required>
 			</label><br>
 			<label id="post-label" class="input" for="Post">Post<br>
-				<textarea type="text" name="Post" maxlength="800" placeholder="Start writing your blog post here! 250 word limit" id="post"></textarea>
+				<textarea type="text" name="Post" maxlength="800" 
+				placeholder="Start writing your blog post here! 250 word limit" id="post" class="input-val" form="blog-form" value="" required></textarea>
 			</label><br>
 		<!--When you click submit the data is added to the json and the open-form
-			button comes back instea of this form-->
+			button comes back instead of this form-->
 			<label id="submit-label" class="input button">
-				<input id="submit" type="submit" name="submit" value="Submit" class="button">
+				<input id="submit" type="submit" name="submit" value="Submit" class="button" form="blog-form" >
 			</label>
 		</div>
 	</div>
