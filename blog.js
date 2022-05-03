@@ -40,12 +40,7 @@ function dogClick() {
 function add(ajax)
 {	
 	var data = JSON.parse(ajax.responseText);
-	for(var i = 0; i < data.Blogs.length; i++)
-	{
-			var p = document.createElement("li");
-			p.innerHTML = data.pets[i].name;
-			document.body.appendChild(p);
-	}
+	data.stringify({Name: $("name").value, Topic: $("Topic").value, Post: $("Post:).value});
 }
 
 function ajaxFailure(ajax, exception) {
