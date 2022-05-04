@@ -1,6 +1,6 @@
 window.onload = pageLoad;
 
-function pageLoad(){
+function pageLoad() {
 	var startBlog = $("new-blog-form");
 	startBlog.style.display = "none";
 
@@ -64,19 +64,16 @@ function show(ajax) {
 	}
 }
 
+function add()
+{
+	
+	var obj = {"Name": $("name").value, "Topic": $("Topic").value, "Post": $("Post").value, "Likes": 0};
 
-function add(ajax){
-	var today = new Date();	
-	var data = JSON.parse(ajax.responseText);
-	data.stringify({Name: $("name").value, Topic: $("topic").value, Post: $("post").value, Likes: 0});
-}
-
-function ajaxFailure(ajax, exception) {
-	alert("Error making Ajax request:" + "\n\nServer status: \n"
-		+ ajax.status + " " + ajax.statusText
-		+ "\n\nServer response text: \n" + ajax.responseText);
-	if (exception) {
-		throw exception;
+	try {
+		fs.writeFile('blog.json', obj);
+		window.alert("JSON data is saved.");
+	} catch (error) {
+		console.error(err);
 	}
 }
 
@@ -87,9 +84,18 @@ function openForm(){
 	form.style.display = "";
 }
 
+function checkForm(){
+	var inputs = document.getElementsByClassName("input-val");
+	for(var i=0; i < inputs.length; i++){
+		if(inputs[i].value == "") {
+			return false;
+		}
+	}
+	return true;
+}
+
 function submitForm(){
 	var filled = checkForm();
-	
 	if(filled){
 		new Ajax.Request("blog.json",
 		{
@@ -106,15 +112,14 @@ function submitForm(){
 		let form = $("new-blog-form");
 		form.style.display = "none";
 	}
-	
 }
 
-function checkForm(){
-	var inputs = document.getElementsByClassName("input-val");
-	for(var i=0; i < inputs.length; i++){
-		if(inputs[i].value == "") {
-			return false;
-		}
+
+function ajaxFailure(ajax, exception) {
+	alert("Error making Ajax request:" + "\n\nServer status: \n"
+		+ ajax.status + " " + ajax.statusText
+		+ "\n\nServer response text: \n" + ajax.responseText);
+	if (exception) {
+		throw exception;
 	}
-	return true;
 }
