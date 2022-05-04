@@ -2,10 +2,10 @@ ALTER TABLE `blogs` ADD `date` DATE NOT NULL  AFTER `Likes`;
 ALTER TABLE `blogs` CHANGE `Date` `Date` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP;
 ALTER TABLE `blogs` ADD UNIQUE(`Topic`);
 
-INSERT INTO `blogs`(`Name`, `Topic`, `Post`, `Likes`, `Date`) VALUES ('Luke','Star Wars Pt. 2','Another outstanding chapter for the next generation in the Star Wars world. I was completely captivated and enthralled by everything I saw from the characters to the story to the effects to the musical score to the mystery to the surprises to the conflict to even the truth about what really happened to Luke Skywalker and why he completely closed himself off from the Force and disappeared without a trace','0','DEFAULT');
+INSERT INTO `blogs`(`Name`, `Topic`, `Post`, `Likes`, `Date`) VALUES ('Luke','Star Wars Pt. 2','Another outstanding chapter for the next generation in the Star Wars world. I was completely captivated and enthralled by everything I saw from the characters to the story to the effects to the musical score to the mystery to the surprises to the conflict to even the truth about what really happened to Luke Skywalker and why he completely closed himself off from the Force and disappeared without a trace','0',current_timestamp());
 
-INSERT INTO `blogs`(`Name`, `Topic`, `Post`, `Likes`, `Date`) VALUES ('Luke','Pulp Fiction: A Disection','Vincent Vega (John Travolta) and Jules Winnfield (Samuel L. Jackson) are hitmen with a penchant for philosophical discussions. In this ultra-hip, multi-strand crime movie, their storyline is interwoven with those of their boss, gangster Marsellus Wallace...','0','DEFAULT');
+INSERT INTO `blogs`(`Name`, `Topic`, `Post`, `Likes`, `Date`) VALUES ('Luke','Pulp Fiction: A Disection','Vincent Vega (John Travolta) and Jules Winnfield (Samuel L. Jackson) are hitmen with a penchant for philosophical discussions. In this ultra-hip, multi-strand crime movie, their storyline is interwoven with those of their boss, gangster Marsellus Wallace...','0',current_timestamp());
 
-INSERT INTO `blogs`(`Name`, `Topic`, `Post`, `Likes`, `Date`) VALUES ('Kristie','Kill Bill','Vincent Vega (John Travolta) and Jules Winnfield (Samuel L. Jackson) are hitmen with a penchant for philosophical discussions. In this ultra-hip, multi-strand crime movie, their storyline is interwoven with those of their boss, gangster Marsellus Wallace...','0','DEFAULT');
+INSERT INTO `blogs`(`Name`, `Topic`, `Post`, `Likes`, `Date`) VALUES ('Kristie','Kill Bill','Vincent Vega (John Travolta) and Jules Winnfield (Samuel L. Jackson) are hitmen with a penchant for philosophical discussions. In this ultra-hip, multi-strand crime movie, their storyline is interwoven with those of their boss, gangster Marsellus Wallace...','0',current_timestamp());
 
 
