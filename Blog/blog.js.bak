@@ -1,0 +1,56 @@
+window.onload = pageLoad;
+
+function pageLoad() {
+	var startBlog = $("new-blog-form");
+	startBlog.style.display = "none";
+
+	var openFormBut = $("open-form-button");
+	openFormBut.onclick = openForm;
+}
+
+function openForm(){
+	this.style.display = "none";
+
+	var form = $('new-blog-form');
+	form.style.display = "";
+}
+
+function checkForm(){
+	var inputs = document.getElementsByClassName("input-val");
+	for(var i=0; i < inputs.length; i++){
+		if(inputs[i].value == "") {
+			return false;
+		}
+	}
+	return true;
+}
+
+function submitForm(){
+	var filled = checkForm();
+	if(filled){
+		new Ajax.Request("blog.json",
+		{
+			method:"get",
+			onSuccess: add,
+			onFailure: ajaxFailure,
+			onException: ajaxFailure
+		}
+	);
+
+		let button = $("open-form-button");
+		button.style.display = "";
+
+		let form = $("new-blog-form");
+		form.style.display = "none";
+	}
+}
+
+
+function ajaxFailure(ajax, exception) {
+	alert("Error making Ajax request:" + "\n\nServer status: \n"
+		+ ajax.status + " " + ajax.statusText
+		+ "\n\nServer response text: \n" + ajax.responseText);
+	if (exception) {
+		throw exception;
+	}
+}
